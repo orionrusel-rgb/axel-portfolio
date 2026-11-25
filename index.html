@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axel — Web Developer &amp; Programming Instructor</title>
+  <meta name="description" content="Portfolio of Axel (Russel Orion Exelent De Misbach), Web Developer &amp; Programming Instructor based in Sidoarjo, Indonesia.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23000000'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='central' text-anchor='middle' font-family='Archivo, Arial, sans-serif' font-weight='900' font-size='36' fill='%23C9A227'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER (non-sticky, scrolls naturally with the page) -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo roll-hover" aria-label="Axel Home">Axel</a>
+
+      <a href="mailto:orionrusel@gmail.com" class="header-email roll-hover">orionrusel@gmail.com</a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation menu"
+        aria-controls="nav-overlay"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle-line"></span>
+        <span class="menu-toggle-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV OVERLAY (fullscreen, plain black, no photo) -->
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+    <div class="nav-overlay-inner">
+      <div class="nav-overlay-top">
+        <a href="#top" class="brand-logo overlay-close-link roll-hover">Axel</a>
+        <a href="mailto:orionrusel@gmail.com" class="header-email overlay-close-link roll-hover">orionrusel@gmail.com</a>
+        <button
+          type="button"
+          class="menu-close"
+          id="menu-close"
+          aria-label="Close navigation menu"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <nav class="overlay-nav" aria-label="Overlay Navigation">
+        <ul class="overlay-nav-list">
+          <li><a href="#about" class="overlay-close-link roll-hover">About me</a></li>
+          <li><a href="#works" class="overlay-close-link roll-hover">Portfolio</a></li>
+          <li><a href="#testimonials" class="overlay-close-link roll-hover">Testimonials</a></li>
+          <li><a href="#faq" class="overlay-close-link roll-hover">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-overlay-footer">
+        <a href="mailto:orionrusel@gmail.com" class="btn-bracket overlay-close-link"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">book a call with me</span><span class="btn-roll-copy" aria-hidden="true">book a call with me</span></span></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. HERO (dark, pinned via sticky top 0; no zoom, no parallax) -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-media" aria-hidden="true">
+      <img
+        src="photos/hero.jpg"
+        alt=""
+        class="hero-bg-img"
+      >
+      <div class="hero-dim"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-meta-bar">
+        <p class="hero-roles"><span>Web Developer</span><span>Programming Instructor</span><span>UI/UX Designer</span></p>
+
+        <div class="hero-clock-wrap" aria-label="Local time">
+          <span class="hero-location" id="clock-location">SIDOARJO, ID</span>
+          <span class="clock-live-dot" aria-hidden="true"></span>
+          <time class="hero-clock" id="live-clock-hero">09:27 PM</time>
+          <div class="tz-dropdown" id="country-tz-dropdown">
+            <button
+              type="button"
+              class="tz-trigger"
+              id="country-tz-trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="country-tz-list"
+            >
+              <span class="tz-trigger-label" id="country-tz-label">Indonesia</span>
+              <span class="tz-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="tz-panel" id="country-tz-panel">
+              <div class="tz-search-wrap">
+                <input
+                  type="search"
+                  class="tz-search"
+                  id="country-tz-search"
+                  placeholder="Cari negara…"
+                  autocomplete="off"
+                  aria-label="Cari negara"
+                >
+              </div>
+              <ul class="tz-list" id="country-tz-list" role="listbox" aria-label="Pilih negara"></ul>
+              <p class="tz-empty" id="country-tz-empty" hidden>Tidak ada negara yang cocok.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-center">
+        <div class="hero-counter" aria-label="12 selected projects">
+          <span class="hero-counter-num">/12</span>
+          <span class="hero-counter-label">SELECTED PROJECTS</span>
+        </div>
+
+        <div class="hero-title-wrap">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Vision</span>
+            <span class="hero-title-line">portfolio</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <a href="#works" class="hero-portfolio-link roll-hover">Portfolio</a>
+        <div class="hero-socials">
+          <a href="https://instagram.com/_3xellentt" target="_blank" rel="noopener noreferrer" class="hero-social-link roll-hover" aria-label="Instagram">IG</a>
+          <a href="https://github.com/orionrusel-rgb" target="_blank" rel="noopener noreferrer" class="hero-social-link roll-hover" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/russel-orion-exelent-de-misbach" target="_blank" rel="noopener noreferrer" class="hero-social-link roll-hover" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE SHEET (slides up over the pinned Hero) -->
+  <main class="page-sheet">
+
+    <!-- 3. 01 /introduction -->
+    <section class="section intro-section has-giant-label" id="introduction">
+      <span class="giant-label" aria-hidden="true">/about me</span>
+      <div class="container">
+        <div class="section-kicker">
+          <span class="section-index">01</span>
+          <span class="section-slash">/introduction</span>
+        </div>
+
+        <h2 class="spaced-statement intro-statement">
+          <span class="tone-dark">I build websites where design meets code.</span>
+          <span class="tone-grey">My work blends creativity with clean engineering — without losing meaning.</span>
+        </h2>
+
+        <div class="intro-grid">
+          <figure class="intro-media">
+            <img
+              src="photos/intro.jpg"
+              alt="Axel web development workspace and code setup"
+              class="static-photo"
+              loading="lazy"
+            >
+          </figure>
+
+          <div class="intro-copy">
+            <p class="intro-paragraph">
+              I am Axel — Web Developer, Programming Instructor and your partner in building for the web. I help brands, UMKM, and students turn ideas into real websites.
+            </p>
+            <div class="intro-actions">
+              <a href="https://www.linkedin.com/in/russel-orion-exelent-de-misbach" target="_blank" rel="noopener noreferrer" class="btn-bracket"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">resume</span><span class="btn-roll-copy" aria-hidden="true">resume</span></span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. /Worked with — continuous marquee -->
+    <section class="worked-section" aria-label="Worked With">
+      <div class="container worked-header">
+        <span class="section-eyebrow">/Worked with</span>
+      </div>
+      <div class="container">
+        <div class="worked-marquee">
+          <div class="worked-track" id="worked-track">
+            <span class="worked-name">Karepmu Project</span>
+            <span class="worked-name">Anugerah School</span>
+            <span class="worked-name">SMPN 1 Bojonegoro</span>
+            <span class="worked-name">SMK Telkom Sidoarjo</span>
+            <span class="worked-name">OrionCode</span>
+            <span class="worked-name">GDGoC IPB</span>
+            <span class="worked-name" aria-hidden="true">Karepmu Project</span>
+            <span class="worked-name" aria-hidden="true">Anugerah School</span>
+            <span class="worked-name" aria-hidden="true">SMPN 1 Bojonegoro</span>
+            <span class="worked-name" aria-hidden="true">SMK Telkom Sidoarjo</span>
+            <span class="worked-name" aria-hidden="true">OrionCode</span>
+            <span class="worked-name" aria-hidden="true">GDGoC IPB</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 02 /featured — best works -->
+    <section class="section featured-section has-giant-label" id="featured">
+      <span class="giant-label" aria-hidden="true">/featured</span>
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-kicker">
+            <span class="section-index">02</span>
+            <span class="section-slash">/featured</span>
+          </div>
+          <h2 class="section-display-title">best works</h2>
+        </div>
+
+        <div class="featured-layout">
+          <div class="featured-stack">
+            <article class="featured-card">
+              <div class="featured-image-wrap">
+                <img
+                  src="photos/bw-karepmu.jpg"
+                  alt="Karepmu Project Website showcase"
+                  class="static-photo"
+                  loading="lazy"
+                >
+              </div>
+              <div class="featured-meta">
+                <h3 class="work-title">Karepmu Project Website</h3>
+                <div class="work-details">
+                  <span class="work-category">Web Development</span>
+                  <span class="work-year">2026</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <div class="featured-image-wrap">
+                <img
+                  src="photos/bw-orion-travel.jpg"
+                  alt="Orion Travel Website showcase"
+                  class="static-photo"
+                  loading="lazy"
+                >
+              </div>
+              <div class="featured-meta">
+                <h3 class="work-title">Orion Travel</h3>
+                <div class="work-details">
+                  <span class="work-category">Travel Website</span>
+                  <span class="work-year">2026</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card">
+              <div class="featured-image-wrap">
+                <img
+                  src="photos/bw-orioncode.jpg"
+                  alt="OrionCode Academy Bootcamp Website showcase"
+                  class="static-photo"
+                  loading="lazy"
+                >
+              </div>
+              <div class="featured-meta">
+                <h3 class="work-title">OrionCode Academy</h3>
+                <div class="work-details">
+                  <span class="work-category">Bootcamp Website</span>
+                  <span class="work-year">2026</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. work principles -->
+    <section class="section principles-section has-giant-label" id="principles">
+      <span class="giant-label" aria-hidden="true">/principles</span>
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-display-title">work principles</h2>
+        </div>
+        <div class="principles-intro">
+          <p>Formats are tailored for web and mobile.</p>
+          <p>Every project is tailored to the client and business</p>
+        </div>
+
+        <div class="principles-list">
+          <article class="principle-item">
+            <div class="principle-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop"
+                alt="Transparency principle visual"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="principle-body">
+              <h3 class="principle-title">Transparency</h3>
+              <p class="principle-desc">we discuss goals and outcomes before starting</p>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <div class="principle-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop"
+                alt="Smart aesthetics principle visual"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="principle-body">
+              <h3 class="principle-title">Smart aesthetics</h3>
+              <p class="principle-desc">Not code for its own sake, but function and impact</p>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <div class="principle-badges" aria-label="Credentials: ONSP 2025, AITC, GDGoC IPB">
+              <span class="principle-badge">ONSP 2025</span>
+              <span class="principle-badge">AITC</span>
+              <span class="principle-badge">GDGoC IPB</span>
+            </div>
+            <div class="principle-body">
+              <h3 class="principle-title">Honesty about technology</h3>
+            </div>
+          </article>
+
+          <article class="principle-item">
+            <div class="principle-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200&auto=format&fit=crop"
+                alt="Value-driven design principle visual"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="principle-body">
+              <h3 class="principle-title">Value-driven design</h3>
+              <p class="principle-desc">every feature serves your goals</p>
+            </div>
+          </article>
+
+          <article class="principle-item principle-item-clock">
+            <div class="principle-clock">
+              <span class="principle-clock-label"><span class="clock-live-dot" aria-hidden="true"></span><span id="principle-clock-location">SIDOARJO, ID</span></span>
+              <time class="principle-clock-time" id="live-clock-principle">21:27</time>
+            </div>
+            <div class="principle-body principle-bottom-body">
+              <p class="principle-statement">I respect deadlines and take full ownership of quality.</p>
+              <span class="principle-license">&copy; I never use unlicensed work</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 03 /portfolio — latest portfolio -->
+    <section class="section portfolio-section has-giant-label" id="works">
+      <span class="giant-label" aria-hidden="true">/works</span>
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-kicker">
+            <span class="section-index">03</span>
+            <span class="section-slash">/portfolio</span>
+          </div>
+          <div class="portfolio-heading-wrap">
+            <h2 class="section-display-title">latest portfolio</h2>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-image-wrap">
+              <img
+                src="photos/pf-portofolio.jpg"
+                alt="Portofolio Personal Website preview"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="portfolio-meta">
+              <h3 class="work-title">Portofolio</h3>
+              <div class="work-details">
+                <span class="work-category">Personal Website</span>
+                <span class="work-year">2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image-wrap">
+              <img
+                src="photos/pf-hidden-wonders.jpg"
+                alt="Hidden Wonders Discover Indonesia preview"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="portfolio-meta">
+              <h3 class="work-title">Hidden Wonders</h3>
+              <div class="work-details">
+                <span class="work-category">Discover Indonesia</span>
+                <span class="work-year">2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image-wrap">
+              <img
+                src="photos/pf-atherion.jpg"
+                alt="ATHERION Energy Experience Site preview"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="portfolio-meta">
+              <h3 class="work-title">ATHERION</h3>
+              <div class="work-details">
+                <span class="work-category">Energy Experience Site</span>
+                <span class="work-year">2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image-wrap">
+              <img
+                src="photos/pf-podcast.jpg"
+                alt="Podcast Raditya Dika Website preview"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="portfolio-meta">
+              <h3 class="work-title">Podcast Raditya Dika</h3>
+              <div class="work-details">
+                <span class="work-category">Podcast Website</span>
+                <span class="work-year">2026</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-image-wrap">
+              <img
+                src="photos/pf-iot.jpg"
+                alt="IoT Workshop Wokwi Simulation preview"
+                class="static-photo"
+                loading="lazy"
+              >
+            </div>
+            <div class="portfolio-meta">
+              <h3 class="work-title">IoT Workshop</h3>
+              <div class="work-details">
+                <span class="work-category">Wokwi Simulation</span>
+                <span class="work-year">2026</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="portfolio-actions">
+          <a href="https://github.com/orionrusel-rgb" target="_blank" rel="noopener noreferrer" class="btn-bracket"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">see all my works</span><span class="btn-roll-copy" aria-hidden="true">see all my works</span></span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 04 /about (no giant side label per reference) -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-kicker">
+          <span class="section-index">04</span>
+          <span class="section-slash">/about</span>
+        </div>
+
+        <h2 class="spaced-statement about-statement">
+          <span class="tone-dark">I'm Axel — I build with intent,</span>
+          <span class="tone-grey">where clarity meets impact, and technology enhances everyday work.</span>
+        </h2>
+
+        <div class="about-sub">
+          <p class="about-sub-bio">Teaching programming to students across Sidoarjo.<br>Building websites for local businesses and personal projects.</p>
+          <div class="about-socials">
+            <a href="https://www.linkedin.com/in/russel-orion-exelent-de-misbach" target="_blank" rel="noopener noreferrer" class="about-social-link roll-hover" aria-label="LinkedIn">li</a>
+            <a href="https://instagram.com/_3xellentt" target="_blank" rel="noopener noreferrer" class="about-social-link roll-hover" aria-label="Instagram">IG</a>
+            <a href="https://github.com/orionrusel-rgb" target="_blank" rel="noopener noreferrer" class="about-social-link roll-hover" aria-label="GitHub">GH</a>
+          </div>
+        </div>
+
+        <figure class="about-media">
+          <img
+            src="photos/about.jpg"
+            alt="Axel coding laptop and development workstation"
+            class="static-photo"
+            loading="lazy"
+          >
+        </figure>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-number">3</span>
+            <span class="about-stat-label">Work experiences</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">2</span>
+            <span class="about-stat-label">Certificates</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">8</span>
+            <span class="about-stat-label">Technologies</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-number">6</span>
+            <span class="about-stat-label">Live websites</span>
+          </div>
+        </div>
+
+        <div class="facts-block" id="facts-figures">
+          <div class="facts-header">
+            <span class="meta-label">/facts &amp; figures</span>
+          </div>
+
+          <div class="facts-grid">
+            <div class="stat-item">
+              <span class="stat-number" data-target="12" data-suffix="+">12+</span>
+              <span class="stat-label">Projects completed</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-number" data-target="2" data-suffix="+">2+</span>
+              <span class="stat-label">Years of experience</span>
+            </div>
+
+            <div class="stat-item">
+              <span class="stat-number" data-target="3" data-suffix="">3</span>
+              <span class="stat-label">Organizations served</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-cards">
+          <a href="https://github.com/orionrusel-rgb" target="_blank" rel="noopener noreferrer" class="blog-card">
+            <span class="blog-platform">GITHUB</span>
+            <span class="blog-title">Open-source projects and code, built in public.</span>
+          </a>
+          <a href="https://instagram.com/_3xellentt" target="_blank" rel="noopener noreferrer" class="blog-card">
+            <span class="blog-platform">INSTAGRAM</span>
+            <span class="blog-title">Building websites, teaching code, and learning German — one post at a time.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. services (TWO labels: /experience at top, /what i do at bottom) -->
+    <section class="section services-section has-giant-label" id="services">
+      <span class="giant-label giant-label--top" aria-hidden="true">/experience</span>
+      <span class="giant-label giant-label--bottom" aria-hidden="true">/what i do</span>
+      <div class="container">
+        <div class="section-header-row">
+          <h2 class="section-display-title">services</h2>
+        </div>
+
+        <div class="services-list">
+          <article class="service-item">
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-desc">
+              From landing pages to full multi-section sites — fast, responsive, and built with clean HTML, CSS, and JavaScript.
+            </p>
+            <div class="service-media">
+              <figure class="service-figure">
+                <img
+                  src="photos/svc-karepmu.jpg"
+                  alt="Website development work example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">Karepmu Project Website</span><span class="fig-meta">Karepmu Project / 2026</span></figcaption>
+              </figure>
+              <figure class="service-figure">
+                <img
+                  src="photos/svc-orion-travel.jpg"
+                  alt="Travel website work example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">Orion Travel</span><span class="fig-meta">Personal Project / 2026</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">
+              Interfaces that are clear and easy to use, designed around real people and real goals.
+            </p>
+            <div class="service-media">
+              <figure class="service-figure">
+                <img
+                  src="photos/svc-portofolio.jpg"
+                  alt="UI/UX design work example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">Portofolio Personal Website</span><span class="fig-meta">Personal Project / 2026</span></figcaption>
+              </figure>
+              <figure class="service-figure">
+                <img
+                  src="photos/svc-hidden-wonders.jpg"
+                  alt="Discover Indonesia design example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">Hidden Wonders</span><span class="fig-meta">Personal Project / 2026</span></figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="service-item">
+            <h3 class="service-title">Programming Instructor</h3>
+            <p class="service-desc">
+              I teach Scratch, web basics, and IoT simulation — from one-day workshops to classroom sessions.
+            </p>
+            <div class="service-media">
+              <figure class="service-figure">
+                <img
+                  src="photos/svc-iot.jpg"
+                  alt="IoT workshop teaching example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">IoT Workshop</span><span class="fig-meta">SMPN 1 Bojonegoro / 2026</span></figcaption>
+              </figure>
+              <figure class="service-figure">
+                <img
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+                  alt="ESP32 IoT teaching example"
+                  class="static-photo"
+                  loading="lazy"
+                >
+                <figcaption><span class="fig-title">Smart Noise Detector</span><span class="fig-meta">Personal Project / 2026</span></figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <div class="services-actions">
+          <a href="#contact" class="btn-bracket"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">contact me</span><span class="btn-roll-copy" aria-hidden="true">contact me</span></span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 05 /customers stories — testimonials (pure autoplay rail, no arrows) -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="section-kicker">
+            <span class="section-index">05</span>
+            <span class="section-slash">/customers stories</span>
+          </div>
+          <h2 class="section-display-title">testimonials</h2>
+        </div>
+
+        <div class="testimonial-rail" id="testimonial-rail" aria-label="Client testimonials">
+          <div class="testimonial-rail-track">
+            <article class="testimonial-rail-card">
+              <div class="testimonial-rating" aria-label="Rated 5 out of 5">
+                <span class="rating-score">5 / 5</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                &ldquo;Axel built our website fast and kept communicating clearly the whole week.&rdquo;
+              </blockquote>
+              <div class="testimonial-author">
+                <span class="author-monogram" aria-hidden="true">KP</span>
+                <span class="author-name">Karepmu Project Team</span>
+                <span class="author-role">Internship Client</span>
+              </div>
+            </article>
+
+            <article class="testimonial-rail-card">
+              <div class="testimonial-rating" aria-label="Rated 5 out of 5">
+                <span class="rating-score">5 / 5</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                &ldquo;The students were engaged from start to finish — clear, patient teaching.&rdquo;
+              </blockquote>
+              <div class="testimonial-author">
+                <span class="author-monogram" aria-hidden="true">AS</span>
+                <span class="author-name">Anugerah School</span>
+                <span class="author-role">Teaching Partner</span>
+              </div>
+            </article>
+
+            <article class="testimonial-rail-card">
+              <div class="testimonial-rating" aria-label="Rated 5 out of 5">
+                <span class="rating-score">5 / 5</span>
+              </div>
+              <blockquote class="testimonial-quote">
+                &ldquo;A practical IoT session our students could actually follow.&rdquo;
+              </blockquote>
+              <div class="testimonial-author">
+                <span class="author-monogram" aria-hidden="true">SB</span>
+                <span class="author-name">SMPN 1 Bojonegoro</span>
+                <span class="author-role">Workshop Partner</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <article class="testimonial-featured">
+          <div class="testimonial-featured-body">
+            <div class="testimonial-rating" aria-label="Rated 5 out of 5">
+              <span class="rating-score">5 / 5</span>
+            </div>
+            <blockquote class="testimonial-quote testimonial-quote-featured">
+              &ldquo;Axel built our website fast and kept communicating clearly the whole week.&rdquo;
+            </blockquote>
+            <div class="testimonial-author">
+              <span class="author-monogram" aria-hidden="true">KP</span>
+              <span class="author-name">Karepmu Project Team</span>
+              <span class="author-role">Internship Client</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 11. 06 /FAQ -->
+    <section class="section faq-section has-giant-label" id="faq">
+      <span class="giant-label" aria-hidden="true">/faq</span>
+      <div class="container">
+        <div class="section-kicker">
+          <span class="section-index">06</span>
+          <span class="section-slash">/FAQ</span>
+        </div>
+
+        <h2 class="spaced-statement faq-heading">
+          <span class="tone-dark">Before you ask me about.</span>
+          <span class="tone-grey">There's what most people want to know.</span>
+        </h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button
+              type="button"
+              class="faq-trigger roll-hover"
+              aria-expanded="false"
+              aria-controls="faq-answer-1"
+            >
+              <span class="faq-num" aria-hidden="true">01</span>
+              <span class="faq-question">What kind of projects do you usually take on?</span>
+              <span class="faq-dot" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-answer-1">
+              <div class="faq-panel-inner">
+                <p class="faq-answer">
+                  Websites for UMKM, schools, and personal brands — landing pages, portfolios, company profiles, and learning platforms. If it lives on the web, I can build it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              type="button"
+              class="faq-trigger roll-hover"
+              aria-expanded="false"
+              aria-controls="faq-answer-2"
+            >
+              <span class="faq-num" aria-hidden="true">02</span>
+              <span class="faq-question">What&rsquo;s your creative process like?</span>
+              <span class="faq-dot" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-answer-2">
+              <div class="faq-panel-inner">
+                <p class="faq-answer">
+                  We discuss goals first, then I design, build, and test — on desktop and on your phone — before launch. You see progress at every step.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              type="button"
+              class="faq-trigger roll-hover"
+              aria-expanded="false"
+              aria-controls="faq-answer-3"
+            >
+              <span class="faq-num" aria-hidden="true">03</span>
+              <span class="faq-question">What do you need from me to get started?</span>
+              <span class="faq-dot" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-answer-3">
+              <div class="faq-panel-inner">
+                <p class="faq-answer">
+                  Your goal, your content (text and photos if you have them), and any reference you like. No content yet? I can help shape it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              type="button"
+              class="faq-trigger roll-hover"
+              aria-expanded="false"
+              aria-controls="faq-answer-4"
+            >
+              <span class="faq-num" aria-hidden="true">04</span>
+              <span class="faq-question">What makes your work different from others?</span>
+              <span class="faq-dot" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-answer-4">
+              <div class="faq-panel-inner">
+                <p class="faq-answer">
+                  I build everything myself, from design to code, and I test on real phones. No templates, no shortcuts — and I explain every step in plain words.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button
+              type="button"
+              class="faq-trigger roll-hover"
+              aria-expanded="false"
+              aria-controls="faq-answer-5"
+            >
+              <span class="faq-num" aria-hidden="true">05</span>
+              <span class="faq-question">Can I see more examples of your work?</span>
+              <span class="faq-dot" aria-hidden="true"></span>
+            </button>
+            <div class="faq-panel" id="faq-answer-5">
+              <div class="faq-panel-inner">
+                <p class="faq-answer">
+                  Yes — all my live sites are on GitHub (orionrusel-rgb), or scroll up to Best Works and Latest Portfolio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-cta">
+          <p class="faq-cta-text">Still have questions?</p>
+          <p class="faq-cta-sub">Feel free to get in touch — I&rsquo;ll gladly clarify the details and help you decide if this is the right fit for your project.</p>
+          <a href="mailto:orionrusel@gmail.com" class="btn-bracket"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">ask me</span><span class="btn-roll-copy" aria-hidden="true">ask me</span></span></span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. FOOTER CONTACT (black) -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <span class="footer-name">Axel</span>
+        <div class="footer-socials">
+          <a href="https://instagram.com/_3xellentt" target="_blank" rel="noopener noreferrer" class="footer-link roll-hover" aria-label="Instagram">IG</a>
+          <a href="https://github.com/orionrusel-rgb" target="_blank" rel="noopener noreferrer" class="footer-link roll-hover" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/russel-orion-exelent-de-misbach" target="_blank" rel="noopener noreferrer" class="footer-link roll-hover" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer-main">
+        <span class="footer-availability"><span class="availability-dot" aria-hidden="true"></span>I'm available for new projects</span>
+        <h2 class="footer-heading">Let's work together</h2>
+        <a href="mailto:orionrusel@gmail.com" class="btn-bracket"><span class="btn-roll"><span class="btn-roll-stack"><span class="btn-roll-copy">book a call with me</span><span class="btn-roll-copy" aria-hidden="true">book a call with me</span></span></span></a>
+        <span class="footer-giant" aria-hidden="true">GET IN TOUCH</span>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 All rights reserved</span>
+        <span class="footer-credit">Designed &amp; built by Axel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
